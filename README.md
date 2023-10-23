@@ -13,7 +13,7 @@ This project is a Social Media Platform tailored for humanitarians to connect, c
 # Demonstration
 
 ## Home Page
-<img width="1408" alt="Screenshot 2023-10-23 at 1 18 01 PM" src="https://github.com/kevinM01/Humanitarians-Networking-Site/assets/78092182/c3033528-0255-4d89-8115-41b2965d4273">
+<img width="1408" alt="Screenshot 2023-10-23 at 1 18 01 PM" src="https://github.com/kevinM01/Humanitarians-Networking-Site/assets/78092182/fb7b2485-94df-4614-8201-f5c32b681aa6">
 
 ## Trainings
 <img width="1420" alt="Screenshot 2023-10-23 at 1 18 31 PM" src="https://github.com/kevinM01/Humanitarians-Networking-Site/assets/78092182/04153704-b2a2-4a4c-9c4b-ceab19a9a562">
