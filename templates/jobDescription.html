@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/collection/components/icon/svg/mail-outline.svg">
+    <title></title>
+    <style>
+
+    body{
+            background-color: #2e2e2;
+            color: rgb(82, 82, 82);
+        }
+        .job-title h1{
+            text-align: center;
+            padding-top: 3%;
+            font-size:225%;
+            color: rgb(182, 0, 91);
+        }
+        .description{
+            width: 80% ;
+            margin: auto;   
+            padding: 0.5em 0.2em;
+            background-color: #f3f3f3;
+            border-bottom: 2px rgba(128, 128, 128, 0.342) solid;
+            border-right: 2px rgba(128, 128, 128, 0.342) solid;
+            margin-bottom: 3%;
+        }
+        .requirements{
+            width: 80% ;
+            margin: auto;   
+            padding: 0.5em 0.2em;
+            background-color: #f3f3f3;
+            border-bottom: 2px rgba(128, 128, 128, 0.342) solid;
+            border-right: 2px rgba(128, 128, 128, 0.342) solid;
+            margin-bottom: 3%;
+        }
+        .apply{
+            width: 80% ;
+            margin: auto;   
+            padding: 0.5em 0.2em;
+            background-color: #f3f3f3;
+            border-bottom: 2px rgba(128, 128, 128, 0.342) solid;
+            border-right: 2px rgba(128, 128, 128, 0.342) solid;
+            margin-bottom: 3%;
+        }
+         #contactimg{
+		background:url("/static/13.jpg") no-repeat;
+		background-size: cover;
+		background-position: center;
+		min-height:700px;
+		background-color:#000;
+		color:#fff;
+		text-align: center;
+	}
+  
+    </style>
+</head>
+<body>
+<div class="jumbotron" id='contactimg'>
+	
+	</div>
+<br>
+ {% for Material in Materials %}
+    <div class="job-title ">
+        <h1>Job Title</h1>
+        
+    </div>
+    <div class="description">
+        <h2>Description</h2>
+        <ul class="description-content">
+            <li>{{ Material.description }}</li>
+            
+        </ul>
+    </div>
+    <div class="requirements">
+        <h2>Requirements</h2>
+        <ul class="requirements-content">
+            <li>{{ Material.requirements }}</li>
+         </ul>
+    </div>
+    <div class="apply">
+        <h2>Apply Now</h2>
+        <p>Email us your Resume: <em class="email">{{ Material.mail }}</em></p>
+    </div>
+    {% endfor %}
+{% endblock body %}

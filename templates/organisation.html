@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<head>
+	<title>Organisation Page</title>
+	<script scr="../static/card.js" type="text/javascript"></script>
+	<style type="text/css">
+		 body{
+            background-color: #2e2e2;
+            color: rgb(82, 82, 82);
+        }
+        .job-title h1{
+            text-align: center;
+            padding-top: 3%;
+            font-size:225%;
+            color: rgb(182, 0, 91);
+        }
+        .description{
+            width: 80% ;
+            margin: auto;   
+            padding: 0.5em 0.2em;
+            background-color: #f3f3f3;
+            border-bottom: 2px rgba(128, 128, 128, 0.342) solid;
+            border-right: 2px rgba(128, 128, 128, 0.342) solid;
+            margin-bottom: 3%;
+        }
+         #contactimg{
+		background:url("/static/16.jpeg") no-repeat;
+		background-size: cover;
+		background-position: center;
+		min-height:500px;
+		background-color:#000;
+		color:#fff;
+		text-align: center;
+	}
+        {% comment %} .description h2{
+            padding: 0 1em;
+            text-shadow: 2px 2px #6868682c;
+        } {% endcomment %}
+        {% comment %} ul{
+            flex: auto;
+            line-height: 2;
+        }
+        .requirements{
+            width: 80% ;
+            margin: auto;   
+            padding: 0.5em 0.2em;
+            background-color: #f3f3f3;
+            border-bottom: 2px rgba(128, 128, 128, 0.342) solid;
+            border-right: 2px rgba(128, 128, 128, 0.342) solid;
+            margin-bottom: 3%;
+        }
+        .requirements h2{
+            text-shadow: 2px 2px #6868682c;
+            padding: 0 1em;
+        }
+        .apply{
+            width: 80% ;
+            margin: auto;   
+            padding: 0.5em 0.2em;
+            background-color: #f3f3f3;
+            border-bottom: 2px rgba(128, 128, 128, 0.342) solid;
+            border-right: 2px rgba(128, 128, 128, 0.342) solid;
+            margin-bottom: 3%;
+        }
+        .apply h2{
+            text-shadow: 2px 2px #6868682c;
+            padding: 0 1em;
+        }
+        .apply p{
+            padding: 0 1.5em;
+        }
+        .apply p em{
+            padding: 15px;
+            font-size: 110%;
+            color: rgb(255, 0, 128);
+        } {% endcomment %}
+
+	</style>
+
+</head>
+<body>
+<br>
+<div class="jumbotron" id='contactimg'>
+	</div>
+ {% for Material in Materials %}
+    <div class="job-title ">
+        <h1>{{ Material.name }}</h1>
+        
+    </div>
+    <div class="description">
+           <p> {{ Material.description }}</p>
+            <br>
+            <p>Contact Us</p>
+            <a href="#">{{ Material.mail }}</a><br>
+             {{ Material.helpline }}
+            
+    </div>
+    {% endfor %}
+{% endblock body %}

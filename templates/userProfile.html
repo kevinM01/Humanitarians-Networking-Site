@@ -1,0 +1,308 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile Page</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  list-style: none;
+}
+
+body{
+  background: #f3f3f3;
+  color: #e6004c;
+}
+
+.wrapper{
+   width: 650px;
+   height: auto;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+  display: flex;
+}
+
+.wrapper .profile{
+   width: 400px;
+   margin-right: 25px;
+}
+
+.wrapper .profile .profile_img_info{
+   display: flex;
+   background: #fff;
+   border-radius: 10px;
+   margin-bottom: 25px;
+   box-shadow: 0 1px 2px rgba(0,0,0,0.125);
+}
+
+.wrapper .profile .profile_img_info .img{
+  width: 125px;
+}
+
+.wrapper .profile .profile_img_info .img img{
+  width: 100%;
+  display: block;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.wrapper .profile .profile_img_info .info{
+    width: calc(100% - 125px);
+    padding: 40px;
+}
+
+.wrapper .profile .profile_img_info .info .name{
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.wrapper .profile .profile_img_info .place{
+    font-weight: 300;
+}
+
+.wrapper .profile .profile_skills{
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.125);
+}
+
+.wrapper .profile .profile_skills .skills{
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.wrapper .profile .profile_skills .skills p{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.wrapper .profile .profile_skills .skills ul li{
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.wrapper .profile .profile_skills .skills ul li .fab{
+  width: 20px;
+}
+
+.wrapper .profile .profile_skills .tags_wrap{
+  padding-top: 20px;
+}
+
+.wrapper .profile .profile_skills .tags_wrap span.tag{
+  background: #e4e9ef;
+  padding: 10px 15px;
+  display: inline-block;
+  border-radius: 10px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.wrapper .profile_counts{
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  width: 175px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.125);
+}
+
+.wrapper .profile_counts .profile_counts_wrap{
+  padding: 30px 0;
+  border-bottom: 1px solid #cccccc;
+}
+.wrapper .profile_counts .profile_counts_wrap:first-child{
+  padding-top: 0;
+}
+.wrapper .profile_counts .profile_counts_wrap:last-child{
+  padding-bottom: 0px;
+  border-bottom: 0px;
+}
+
+.wrapper .profile_counts .profile_counts_wrap .item{
+    padding: 20px 10px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.wrapper .profile_counts .profile_counts_wrap .item:hover{
+  background: #e4e9ef;
+}
+
+.wrapper .profile_counts .profile_counts_wrap .item .fas{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.wrapper .profile_counts .profile_counts_wrap .item .title{
+  font-size: 14px;
+}
+.k{
+   animation-name: colorful;
+  animation-duration: 3s;
+}
+ @keyframes colorful {
+  
+            0% {
+                text: "Connect";
+            }
+  
+            50% {
+                text: "Connecting";
+            }
+  
+            100% {
+                text: "Connected";
+            }
+        }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="profile">
+        <div class="profile_img_info">         
+             <div class="img">
+                <img src="../static/user_profile_pic.png" alt="profile_pic">     
+             </div>
+             <div class="info">
+             {% comment %} {% for data in datas %} {% endcomment %}
+                  <p class="name">{{ user.first_name }}</p>
+                  <p class="name">{{ user.last_name }}</p>
+                    {% comment %} {% endfor %} {% endcomment %}
+                  <p class="place"><span></span>
+                    Volunteer
+                  </p>
+             </div>
+        </div>
+        <div class="profile_skills">
+            <div class="skills">
+                <p>Details</p>
+              
+                <ul>
+                    <li><span class="icon"><i class="fa fa-envelope" style="font-size:16px;color:pink"></i>
+</span>
+{% for data in datas %}
+                       <span class="title">{{ user.email }}</span>
+                       {% endfor %}
+                  </li>
+                    <li><span class="icon"><i class="fa fa-phone" style="font-size:16px;color:pink"></i></span>
+                       <span class="title">8748785865</span></li>
+                       <li><span class="icon"><i class="fa fa-phone" style="font-size:16px;color:pink"></i></span>
+                       <span class="title">9758485856</span></li>
+                    <li><span class="icon"><i class="fab fa-js-square"></i></span>
+
+                       <span class="title">{{ user.skillset }}</span></li>  
+                </ul>
+            </div>
+            <div class="tags_wrap">
+                <span class="tag">Web Development</span>
+              <span class="tag">Web Design</span>
+              <span class="tag">UI/UX</span>
+              <span class="tag">Backend Development</span>
+            </div>
+        </div>
+    </div>
+    <div class="profile_counts">
+        <div class="profile_counts_wrap">
+           <div class="item">
+             <div class="icon"><i class="fas fa-thumbs-up"></i></div>
+             <div class="title">320 Likes</div>
+          </div>
+        </div>
+        <div class="profile_counts_wrap">
+           <div class="item">
+             <div class="icon"><i class="fas fa-eye"></i></div>
+           <div class="title">2980 Views</div>
+          </div>
+        </div>
+        <div class="profile_counts_wrap">
+           <div class="item">
+             <div class="icon"><i class="fas fa-comment"></i></div>
+           <div class="title">117 Comments</div>
+          </div>
+        </div>
+    </div>
+</div>  
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-sm-6 ">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Shyam Shah</h5>
+        <p class="card-text">Empathy is the ability to identify with and understand another person’s experience and point of view. NASW defines it as "the act of perceiving, understanding, experiencing and responding to the emotional state and ideas of another person.</p>
+        <a href="#" class="btn btn-primary k">Connect</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card ">
+      <div class="card-body">
+        <h5 class="card-title">Vinita Wagle</h5>
+        <p class="card-text">I am a hard-working and driven individual who isn’t afraid to face a challenge.
+
+I’m passionate about my work and I know how to get the job done.
+
+I would describe myself as an open and honest person who doesn’t believe in misleading other people and tries to be fair in everything I do..</p>
+        <a href="#" class="btn btn-primary">Connect</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock body %}
