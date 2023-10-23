@@ -24,7 +24,7 @@ This project is a Social Media Platform tailored for humanitarians to connect, c
 <img width="1411" alt="Screenshot 2023-10-23 at 1 19 20 PM" src="https://github.com/kevinM01/Humanitarians-Networking-Site/assets/78092182/1804f6d0-84f2-4797-9175-d354380b1570">
 
 ## Contact Us
-<img width="1435" alt="Screenshot 2023-10-23 at 1 20 06 PM" src="https://github.com/kevinM01/Humanitarians-Networking-Site/assets/78092182/a02f21ec-7aaa-4e30-800b-5b69b84a2f23">
+<img width="1435" alt="Screenshot 2023-10-23 at 1 20 06 PM" src="https://github.com/kevinM01/Humanitarians-Networking-Site/assets/78092182/8499acda-15e5-4dbe-a4ae-324feda5dd7d">
 
 ## Sign-Up
 <img width="1435" alt="Screenshot 2023-10-23 at 1 20 21 PM" src="https://github.com/kevinM01/Humanitarians-Networking-Site/assets/78092182/f7a22f38-b89e-4962-ab9d-547bd5b15cc6">
